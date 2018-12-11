@@ -1,3 +1,48 @@
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  left: 25px;
+  top: 25px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease-out; }
+  .menu-btn.close {
+    background: rgba(68, 68, 68, 0.8); }
+  .menu-btn .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 7px 0 5px 5px;
+    background: #fff;
+    transition: all 0.3s ease-out; }
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  visibility: hidden; }
+  .menu.show {
+    visibility: visible;
+    background: rgba(55, 55, 55, 0.3); }
+  .menu-nav {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 225px;
+    margin: 0;
+    padding: 0;
+    background: #373737;
+    list-style: none;
+    transform: translate3d(-100%, 0, 0);
+    transition: all 0.3s ease-out; }
+    .menu-nav.show {
+      transform: translate3d(0, 0, 0); }
+
 * {
   box-sizing: border-box; }
 

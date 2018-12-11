@@ -1,5 +1,5 @@
 $primary-color: #444;
-$secondary-color: #fff;
+$secondary-color: rgb(255, 0, 0);
 $show-background-image: true;
 $background-image: url(../img/snow_forest.jpeg);
 
@@ -25,5 +25,5 @@ $background-image: url(../img/snow_forest.jpeg);
 }
 
 @mixin easeOut {
-  transition: all 0.5s ease-out;
+  transition: all 0.3s ease-out;
 }
