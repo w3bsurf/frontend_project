@@ -1,0 +1,4 @@
+body#bg-image {
+  background: url(../img/snow_forest.jpeg);
+  background-attachment: fixed;
+  background-size: cover; }

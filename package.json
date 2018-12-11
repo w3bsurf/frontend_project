@@ -1,0 +1,15 @@
+{
+  "name": "frontend_project",
+  "version": "1.0.0",
+  "description": "Frontend project website",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive --usePolling",
+    "deploy": "gh-pages -d dist"
+  },
+  "author": "Joonas Hakkarainen",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.11.0"
+  }
+}

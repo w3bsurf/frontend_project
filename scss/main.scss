@@ -1,0 +1,16 @@
+$show-background-image: true;
+$background-image: url(../img/snow_forest.jpeg);
+
+@mixin background {
+  @if $show-background-image {
+    &#bg-image {
+      background: $background-image;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+  }
+}
+
+body {
+  @include background;
+}
