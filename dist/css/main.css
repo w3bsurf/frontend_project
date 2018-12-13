@@ -326,21 +326,32 @@ main {
     padding: 0;
     overflow: hidden; }
     main#home h1 {
-      margin-top: 10vh; }
+      margin-top: 7vh; }
   main#categories {
     padding: 0; }
 
-.product-categories {
+.contact-box {
   display: grid;
-  grid-gap: 0.7rem;
-  grid-template-columns: repeat(3, 1fr); }
-  .product-categories img {
-    width: 100%;
-    border: 3px #fff solid; }
-    .product-categories img:hover {
-      opacity: 0.9;
-      border-color: #0099ff;
-      transition: all 0.3s ease-out; }
+  grid-gap: 30px;
+  grid-template-areas: "contact1 contact2 contact3 contact4";
+  grid-template-columns: repeat(4, 1fr); }
+  .contact-box .contact-1 {
+    grid-area: contact1; }
+  .contact-box .contact-2 {
+    grid-area: contact2; }
+  .contact-box .contact-3 {
+    grid-area: contact3; }
+  .contact-box .contact-4 {
+    grid-area: contact4; }
+  .contact-box .contact {
+    background: #515151;
+    padding: 0.5rem;
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.25), 0 8px 20px 0 rgba(0, 0, 0, 0.2); }
+    .contact-box .contact img {
+      width: 125px;
+      height: 125px;
+      border-radius: 50%;
+      box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.25); }
 
 .boxes {
   display: flex;
@@ -364,27 +375,32 @@ main {
       .boxes .model:hover span {
         color: #000; }
 
-@media screen and (min-width: 1171px) {
-  .product-categories {
-    grid-template-columns: repeat(4, 1fr); } }
-
 @media screen and (min-width: 769px) and (max-width: 1170px) {
-  .product-categories {
-    grid-template-columns: repeat(3, 1fr); } }
+  .contact-box {
+    grid-template-areas: "contact1 contact2" "contact3 contact4";
+    grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 768px) {
   main {
     align-items: center;
     text-align: center; }
     main .heading1 {
+      font-size: 4em;
       line-height: 1;
-      margin-bottom: 1 rem; }
-  .product-categories {
-    grid-template-columns: repeat(2, 1fr); } }
+      margin-bottom: 2vh; }
+  .contact-box {
+    grid-template-areas: "contact1" "contact2" "contact3" "contact4";
+    grid-template-columns: 1fr; } }
 
 @media screen and (max-width: 500px) {
-  main#home h1 {
-    margin-top: 10vh; }
+  main .heading1 {
+    margin: 3vh 0;
+    font-size: 2.5em;
+    line-height: 1; }
+  main .heading2 {
+    margin: 2vh 0;
+    font-size: 1.5em;
+    line-height: 1.2; }
   .product-categories {
     grid-template-columns: 1fr; }
   .products,
@@ -393,4 +409,11 @@ main {
   .product3,
   .product4,
   .product5 {
-    background-attachment: scroll; } }
+    background-attachment: scroll; }
+    .products .ptext,
+    .product1 .ptext,
+    .product2 .ptext,
+    .product3 .ptext,
+    .product4 .ptext,
+    .product5 .ptext {
+      line-height: 2; } }
