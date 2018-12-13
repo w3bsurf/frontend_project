@@ -2,11 +2,11 @@
   position: absolute;
   z-index: 3;
   left: 25px;
-  top: 25px;
+  top: 10px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  padding: 15px 0 0 10px;
+  padding: 16px 0 0 11px;
   cursor: pointer;
   transition: all 0.3s ease-out; }
   .menu-btn:hover {
@@ -31,10 +31,10 @@
     width: 225px;
     margin: 0;
     padding: 0;
+    box-shadow: 4px 0 8px 0 rgba(0, 0, 0, 0.2), 6px 0 20px 0 rgba(0, 0, 0, 0.19);
     overflow: hidden;
     display: flex;
     flex-flow: column wrap;
-    align-items: center;
     float: left;
     background: #373737;
     list-style: none;
@@ -42,54 +42,254 @@
     transition: all 0.3s ease-out; }
     .menu-nav.show {
       transform: translate3d(0, 0, 0); }
+  .menu-top, .menu-bottom {
+    width: 225px;
+    padding-left: 32px;
+    border-top: 1px solid black; }
+  .menu-top {
+    margin-top: 75px; }
   .menu .nav-item.current > a {
     color: #0099ff; }
-  .menu .nav-link {
+  .menu .nav-link-top,
+  .menu .nav-link-bottom,
+  .menu .nav-link-mid {
     display: inline-block;
     position: relative;
-    font-size: 15px;
-    text-transform: uppercase;
-    padding: 1rem 0;
     font-weight: 300;
     color: #fff;
     text-decoration: none;
     transition: all 0.3s ease-out; }
-    .menu .nav-link:hover {
+    .menu .nav-link-top:hover,
+    .menu .nav-link-bottom:hover,
+    .menu .nav-link-mid:hover {
       color: #0099ff; }
+  .menu .nav-link-top {
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-size: 25px; }
+  .menu .nav-link-mid {
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 1rem 0; }
+  .menu .nav-link-bottom {
+    padding: 10px; }
 
-@media screen and (max-width: 768px) {
-  main {
-    align-items: center;
-    text-align: center; }
-    main .heading1 {
-      line-height: 1;
-      margin-bottom: 1 rem; } }
+.products,
+.product1,
+.product2,
+.product3,
+.product4,
+.product5 {
+  position: relative;
+  opacity: 0.7;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
+  .products .ptext,
+  .product1 .ptext,
+  .product2 .ptext,
+  .product3 .ptext,
+  .product4 .ptext,
+  .product5 .ptext {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase; }
+    .products .ptext .border,
+    .products .ptext .border-link,
+    .product1 .ptext .border,
+    .product1 .ptext .border-link,
+    .product2 .ptext .border,
+    .product2 .ptext .border-link,
+    .product3 .ptext .border,
+    .product3 .ptext .border-link,
+    .product4 .ptext .border,
+    .product4 .ptext .border-link,
+    .product5 .ptext .border,
+    .product5 .ptext .border-link {
+      background-color: #111;
+      color: #fff;
+      padding: 20px; }
+      .products .ptext .border-link:hover,
+      .products .ptext .border-link-link:hover,
+      .product1 .ptext .border-link:hover,
+      .product1 .ptext .border-link-link:hover,
+      .product2 .ptext .border-link:hover,
+      .product2 .ptext .border-link-link:hover,
+      .product3 .ptext .border-link:hover,
+      .product3 .ptext .border-link-link:hover,
+      .product4 .ptext .border-link:hover,
+      .product4 .ptext .border-link-link:hover,
+      .product5 .ptext .border-link:hover,
+      .product5 .ptext .border-link-link:hover {
+        opacity: 0.9;
+        border: 2px #0099ff solid;
+        transition: all 0.3s ease-out; }
 
-@media screen and (max-width: 500px) {
-  main#home h1 {
-    margin-top: 10vh; } }
+.products {
+  background-image: url("../img/backgrounds/background.jpg");
+  min-height: 100%; }
+
+.product1 {
+  background-image: url("../img/backgrounds/headphones-big.jpg");
+  min-height: 400px; }
+
+.product2 {
+  background-image: url("../img/backgrounds/mouse-big.jpg");
+  min-height: 400px; }
+
+.product3 {
+  background-image: url("../img/backgrounds/keyboard-big.jpg");
+  min-height: 400px; }
+
+.product4 {
+  background-image: url("../img/backgrounds/monitor-big.jpg");
+  min-height: 400px; }
+
+.product5 {
+  background-image: url("../img/backgrounds/laptop-big.jpg");
+  min-height: 400px; }
+
+.section {
+  text-align: center;
+  padding: 50px 80px; }
+  .section.section-light {
+    background-color: #f4f4f4;
+    color: #666; }
+  .section.section-dark {
+    background-color: #282e34;
+    color: #ddd; }
 
 * {
   box-sizing: border-box; }
 
+html,
 body {
-  color: #fff;
   height: 100%;
-  margin: 0;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
+  width: 100%;
+  margin: 0; }
+
+body {
+  background: #444;
+  color: #fff;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  line-height: 1.5; }
   body#bg-image {
-    background: url(../img/snow_forest.jpeg);
+    background: url(../img/backgrounds/background.jpg); }
+  body#bg-headphones {
+    background: url(../img/backgrounds/headphones-big.jpg); }
+  body#bg-monitor {
+    background: url(../img/backgrounds/monitor-big.jpg); }
+  body#bg-keyboard {
+    background: url(../img/backgrounds/keyboard-big.jpg); }
+  body#bg-laptop {
+    background: url(../img/backgrounds/laptop-big.jpg); }
+  body#bg-mouse {
+    background: url(../img/backgrounds/mouse-big.jpg); }
+  body#bg-image, body#bg-keyboard, body#bg-monitor, body#bg-mouse, body#bg-laptop, body#bg-headphones {
     background-attachment: fixed;
-    background-size: cover; }
-    body#bg-image:after {
+    background-size: cover;
+    background-position: center; }
+    body#bg-image:after, body#bg-keyboard:after, body#bg-monitor:after, body#bg-mouse:after, body#bg-laptop:after, body#bg-headphones:after {
       content: "";
-      position: absolute;
+      position: fixed;
       top: 0;
       right: 0;
       width: 100%;
       height: 100%;
       z-index: -1;
       background: rgba(68, 68, 68, 0.5); }
+
+.slider {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #1f1f1f;
+  overflow: hidden;
+  position: absolute; }
+  .slider span {
+    position: absolute;
+    color: #fff;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+  .slider:after {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: rgba(68, 68, 68, 0.5); }
+  .slider .slide {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    animation: slide 36s infinite;
+    overflow: hidden; }
+  .slider .slide:nth-child(2) {
+    left: 0%;
+    animation-delay: -1s;
+    background-image: url(../img/backgrounds/background.jpg);
+    background-size: cover;
+    background-position: center; }
+  .slider .slide:nth-child(3) {
+    left: 100%;
+    animation-delay: 5s;
+    background-image: url(../img/backgrounds/keyboard-big.jpg);
+    background-size: cover;
+    background-position: center; }
+  .slider .slide:nth-child(4) {
+    left: 100%;
+    animation-delay: 11s;
+    background-image: url(../img/backgrounds/mouse-big.jpg);
+    background-size: cover;
+    background-position: center; }
+  .slider .slide:nth-child(5) {
+    left: 100%;
+    animation-delay: 17s;
+    background-image: url(../img/backgrounds/headphones-big.jpg);
+    background-size: cover;
+    background-position: center; }
+  .slider .slide:nth-child(6) {
+    left: 100%;
+    animation-delay: 23s;
+    background-image: url(../img/backgrounds/monitor-big.jpg);
+    background-size: cover;
+    background-position: center; }
+  .slider .slide:nth-child(7) {
+    left: 100%;
+    animation-delay: 29s;
+    background-image: url(../img/backgrounds/laptop-big.jpg);
+    background-size: cover;
+    background-position: center; }
+
+@keyframes slide {
+  0% {
+    left: 100%;
+    width: 100%; }
+  5% {
+    left: 0%; }
+  25% {
+    left: 0%; }
+  30% {
+    left: -100%;
+    width: 100%; }
+  31% {
+    left: -100%;
+    width: 0%; }
+  100% {
+    left: 100%;
+    width: 0%; } }
 
 h1,
 h2,
@@ -116,10 +316,81 @@ header {
   z-index: 2;
   width: 100%; }
 
+.text-secondary {
+  color: #1fa5ff; }
+
 main {
   padding: 4rem;
   height: 100%; }
   main#home {
+    padding: 0;
     overflow: hidden; }
     main#home h1 {
       margin-top: 10vh; }
+  main#categories {
+    padding: 0; }
+
+.product-categories {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr); }
+  .product-categories img {
+    width: 100%;
+    border: 3px #fff solid; }
+    .product-categories img:hover {
+      opacity: 0.9;
+      border-color: #0099ff;
+      transition: all 0.3s ease-out; }
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem; }
+  .boxes .model {
+    text-align: center;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    background-color: #202020;
+    color: #ddd;
+    padding: 20px;
+    margin: 10px; }
+    .boxes .model:hover {
+      opacity: 0.9;
+      background: #1fa5ff;
+      color: #000; }
+      .boxes .model:hover span {
+        color: #000; }
+
+@media screen and (min-width: 1171px) {
+  .product-categories {
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .product-categories {
+    grid-template-columns: repeat(3, 1fr); } }
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .heading1 {
+      line-height: 1;
+      margin-bottom: 1 rem; }
+  .product-categories {
+    grid-template-columns: repeat(2, 1fr); } }
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh; }
+  .product-categories {
+    grid-template-columns: 1fr; }
+  .products,
+  .product1,
+  .product2,
+  .product3,
+  .product4,
+  .product5 {
+    background-attachment: scroll; } }

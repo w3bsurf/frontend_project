@@ -1,18 +1,52 @@
 $primary-color: #444;
 $secondary-color: rgb(0, 153, 255);
 $show-background-image: true;
-$background-image: url(../img/snow_forest.jpeg);
+$background-image: url(../img/backgrounds/background.jpg);
+$background-keyboard: url(../img/backgrounds/keyboard-big.jpg);
+$background-monitor: url(../img/backgrounds/monitor-big.jpg);
+$background-mouse: url(../img/backgrounds/mouse-big.jpg);
+$background-laptop: url(../img/backgrounds/laptop-big.jpg);
+$background-headphones: url(../img/backgrounds/headphones-big.jpg);
 
 @mixin background {
   @if $show-background-image {
     &#bg-image {
       background: $background-image;
+    }
+
+    &#bg-headphones {
+      background: $background-headphones;
+    }
+
+    &#bg-monitor {
+      background: $background-monitor;
+    }
+
+    &#bg-keyboard {
+      background: $background-keyboard;
+    }
+
+    &#bg-laptop {
+      background: $background-laptop;
+    }
+
+    &#bg-mouse {
+      background: $background-mouse;
+    }
+
+    &#bg-image,
+    &#bg-keyboard,
+    &#bg-monitor,
+    &#bg-mouse,
+    &#bg-laptop,
+    &#bg-headphones {
       background-attachment: fixed;
       background-size: cover;
+      background-position: center;
 
       &:after {
         content: "";
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
         width: 100%;
@@ -26,6 +60,15 @@ $background-image: url(../img/snow_forest.jpeg);
 
 @mixin easeOut {
   transition: all 0.3s ease-out;
+}
+
+// Set Text Color
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
 }
 
 // Media Query Mixins

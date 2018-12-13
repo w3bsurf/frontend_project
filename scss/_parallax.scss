@@ -1,0 +1,84 @@
+.products,
+.product1,
+.product2,
+.product3,
+.product4,
+.product5 {
+  position: relative;
+  opacity: 0.7;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  .ptext {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+
+    .border,
+    .border-link {
+      background-color: #111;
+      color: #fff;
+      padding: 20px;
+
+      &-link {
+        &:hover {
+          opacity: 0.9;
+          border: 2px $secondary-color solid;
+          @include easeOut;
+        }
+      }
+    }
+  }
+}
+
+.products {
+  background-image: url("../img/backgrounds/background.jpg");
+  min-height: 100%;
+}
+
+.product1 {
+  background-image: url("../img/backgrounds/headphones-big.jpg");
+  min-height: 400px;
+}
+
+.product2 {
+  background-image: url("../img/backgrounds/mouse-big.jpg");
+  min-height: 400px;
+}
+
+.product3 {
+  background-image: url("../img/backgrounds/keyboard-big.jpg");
+  min-height: 400px;
+}
+
+.product4 {
+  background-image: url("../img/backgrounds/monitor-big.jpg");
+  min-height: 400px;
+}
+
+.product5 {
+  background-image: url("../img/backgrounds/laptop-big.jpg");
+  min-height: 400px;
+}
+
+.section {
+  text-align: center;
+  padding: 50px 80px;
+
+  &.section-light {
+    background-color: #f4f4f4;
+    color: #666;
+  }
+
+  &.section-dark {
+    background-color: #282e34;
+    color: #ddd;
+  }
+}

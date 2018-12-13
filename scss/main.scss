@@ -1,18 +1,137 @@
 @import "configuration";
 @import "menu";
-@import "mobile";
+@import "parallax";
 
 * {
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
 body {
   @include background;
-  color: #fff;
-  height: 100%;
-  margin: 0;
+  background: $primary-color;
+  color: set-text-color($primary-color);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+
+.slider {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #1f1f1f;
+  overflow: hidden;
+  position: absolute;
+
+  span {
+    position: absolute;
+    color: #fff;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  &:after {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: rgba($primary-color, 0.5);
+  }
+
+  .slide {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    animation: slide 36s infinite;
+    overflow: hidden;
+  }
+
+  .slide:nth-child(2) {
+    left: 0%;
+    animation-delay: -1s;
+    background-image: url(../img/backgrounds/background.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .slide:nth-child(3) {
+    left: 100%;
+    animation-delay: 5s;
+    background-image: url(../img/backgrounds/keyboard-big.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .slide:nth-child(4) {
+    left: 100%;
+    animation-delay: 11s;
+    background-image: url(../img/backgrounds/mouse-big.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .slide:nth-child(5) {
+    left: 100%;
+    animation-delay: 17s;
+    background-image: url(../img/backgrounds/headphones-big.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .slide:nth-child(6) {
+    left: 100%;
+    animation-delay: 23s;
+    background-image: url(../img/backgrounds/monitor-big.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .slide:nth-child(7) {
+    left: 100%;
+    animation-delay: 29s;
+    background-image: url(../img/backgrounds/laptop-big.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@keyframes slide {
+  0% {
+    left: 100%;
+    width: 100%;
+  }
+  5% {
+    left: 0%;
+  }
+  25% {
+    left: 0%;
+  }
+  30% {
+    left: -100%;
+    width: 100%;
+  }
+  31% {
+    left: -100%;
+    width: 0%;
+  }
+  100% {
+    left: 100%;
+    width: 0%;
+  }
 }
 
 // Headings
@@ -34,7 +153,7 @@ h3 {
 }
 
 a {
-  color: #fff;
+  color: set-text-color($primary-color);
   text-decoration: none;
 }
 
@@ -44,15 +163,73 @@ header {
   width: 100%;
 }
 
+.text-secondary {
+  color: lighten($secondary-color, 6);
+}
+
 main {
   padding: 4rem;
   height: 100%;
 
   &#home {
+    padding: 0;
     overflow: hidden;
 
     h1 {
       margin-top: 10vh;
     }
   }
+
+  &#categories {
+    padding: 0;
+  }
 }
+
+// Product category page
+.product-categories {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  img {
+    width: 100%;
+    border: 3px #fff solid;
+
+    &:hover {
+      opacity: 0.9;
+      border-color: $secondary-color;
+      @include easeOut;
+    }
+  }
+}
+
+// Product model page
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+
+  .model {
+    text-align: center;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    background-color: lighten(#111, 6);
+    color: #ddd;
+    padding: 20px;
+    margin: 10px;
+
+    &:hover {
+      opacity: 0.9;
+      background: lighten($secondary-color, 6);
+      color: set-text-color($secondary-color);
+      span {
+        color: set-text-color($secondary-color);
+      }
+    }
+  }
+}
+
+@import "mobile";

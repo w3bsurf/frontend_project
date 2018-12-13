@@ -3,19 +3,16 @@
   position: absolute;
   z-index: 3;
   left: 25px;
-  top: 25px;
+  top: 10px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  padding: 15px 0 0 10px;
+  padding: 16px 0 0 11px;
   cursor: pointer;
   @include easeOut;
 
   &:hover {
     background: rgba($secondary-color, 0.8);
-  }
-
-  &.close {
   }
 
   .btn-line {
@@ -45,10 +42,10 @@
     width: 225px;
     margin: 0;
     padding: 0;
+    box-shadow: 4px 0 8px 0 rgba(0, 0, 0, 0.2), 6px 0 20px 0 rgba(0, 0, 0, 0.19);
     overflow: hidden;
     display: flex;
     flex-flow: column wrap;
-    align-items: center;
     float: left;
     background: rgba(darken($primary-color, 5), 1);
     list-style: none;
@@ -61,25 +58,55 @@
     }
   }
 
+  &-top,
+  &-bottom {
+    width: 225px;
+    padding-left: 32px;
+    border-top: 1px solid black;
+  }
+
+  &-top {
+    margin-top: 75px;
+  }
+
+  &-bottom {
+  }
+
   .nav-item {
     &.current > a {
       color: $secondary-color;
     }
   }
 
-  .nav-link {
+  .nav-link-top,
+  .nav-link-bottom,
+  .nav-link-mid {
     display: inline-block;
     position: relative;
-    font-size: 15px;
-    text-transform: uppercase;
-    padding: 1rem 0;
+
     font-weight: 300;
-    color: #fff;
+    color: set-text-color($primary-color);
     text-decoration: none;
     @include easeOut;
 
     &:hover {
       color: $secondary-color;
     }
+  }
+
+  .nav-link-top {
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-size: 25px;
+  }
+
+  .nav-link-mid {
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 1rem 0;
+  }
+
+  .nav-link-bottom {
+    padding: 10px;
   }
 }
